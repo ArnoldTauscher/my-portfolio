@@ -24,7 +24,7 @@ export const PROJECTS_DATA = [
         githubLink: "https://github.com/ArnoldTauscher/restaurant-gericht",
         githubReadmeLink: "https://github.com/ArnoldTauscher/restaurant-gericht/blob/main/README.md",
         imageUrl: "das_gericht_restaurant",
-        projectLink: "https://das-gericht-restaurant.netlify.app/"
+        projectLink: "https://das-restaurant-gericht.netlify.app/"
     },
     {
         id: 3,

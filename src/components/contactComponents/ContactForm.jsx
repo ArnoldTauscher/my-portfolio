@@ -145,7 +145,7 @@ export const ContactForm = ({ isContactFormOpen, closeContactForm }) => {
 
   // Hauptrender-Funktion
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="overlay">
       <div className="bg-gray-800 m-6 p-8 rounded-2xl shadow-lg max-w-[1000px] w-[90%] max-h-[100vh] overflow-y-auto box-border">
         <h1 className="text-start text-2xl text-white">{TITLE}</h1>
         <p className="mb-4">

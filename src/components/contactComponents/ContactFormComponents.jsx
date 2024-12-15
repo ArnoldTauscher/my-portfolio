@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { BUTTON_BASE_CLASSES } from "../../constant/contactFormData";
 
 // Input-Komponente mit Prop-Validierung
 export const Input = ({
@@ -20,7 +19,7 @@ export const Input = ({
       onChange={onChange}
       placeholder={placeholder}
       required
-      className="rounded-md border border-gray-300 p-2 text-black focus:outline-none focus:ring-2 focus:risd-blue w-full"
+      className="input-base"
       aria-invalid={error ? "true" : "false"}
     />
     {error && (
@@ -51,7 +50,7 @@ export const Textarea = ({ id, name, value, onChange, placeholder, error }) => (
       onChange={onChange}
       placeholder={placeholder}
       required
-      className="rounded-md border border-gray-300 p-2 text-black focus:outline-none focus:ring-2 focus:risd-blue w-full"
+      className="input-base"
       aria-invalid={error ? "true" : "false"}
     />
     {error && (
@@ -80,7 +79,7 @@ export const Button = ({
   variant = "primary",
 }) => (
   <button
-    className={`${BUTTON_BASE_CLASSES} ${
+    className={`contact-form-btn-base ${
       variant === "primary"
         ? "bg-risd-blue text-white border-risd-blue"
         : "bg-white text-black border-risd-blue"

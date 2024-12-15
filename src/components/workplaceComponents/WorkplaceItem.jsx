@@ -16,9 +16,9 @@ export const WorkplaceItem = ({
   const layoutData = GRID_LAYOUT.WORKPLACE_ITEM;
 
   return (
-    <div className="grid grid-cols-3 xxl:gap-10 xl:gap-8 lg:gap-6 gap-4 lg:mt-[65px] mt-10">
+    <div className="mt-10 grid grid-cols-3 gap-4 lg:mt-[65px] lg:gap-6 xl:gap-8 xxl:gap-10">
       <motion.div
-        className={`bg-grad-theme-135 rounded-3xl overflow-hidden p-[3px] md:min-h-[200px] min-h-auto ${layoutData.cardColSpan}`}
+        className={`min-h-auto md:min-h-[200px] card-base ${layoutData.cardColSpan}`}
         ref={gradientRef}
         initial={{
           opacity: 0,
@@ -37,23 +37,23 @@ export const WorkplaceItem = ({
         }}
       >
         <div
-          className={`rounded-3xl overflow-hidden bg-jet flex relative ${layoutData.cardFlexCol} ${layoutData.cardGradientAfter} ${layoutData.cardGradientBefore} ${layoutData.cardContentPadding} justify-between items-center h-full lg:gap-y-[26px] md:gap-y-5 gap-y-4`}
+          className={`relative flex h-full items-center justify-between overflow-hidden bg-jet rounded-3xl ${layoutData.cardFlexCol} ${layoutData.cardGradientAfter} ${layoutData.cardGradientBefore} ${layoutData.cardContentPadding} gap-y-4 md:gap-y-5 lg:gap-y-[26px]`}
         >
           <div
-            className={`gap-y-2 flex flex-col items-center text-center relative z-10 pt-5`}
+            className={`relative z-10 flex flex-col items-center gap-y-2 pt-5 text-center`}
           >
-            <p className="text-white lg:text-base tet-sm">{company}</p>
-            <p className="text-white lg:text-base tet-sm">{date}</p>
+            <p className="text-white tet-sm lg:text-base">{company}</p>
+            <p className="text-white tet-sm lg:text-base">{date}</p>
           </div>
-          <h4 className="lg:text-2xl text-base sm:text-lg md:text-xl text-white font-montserrat text-center font-semibold z-10">
+          <h3 className="text-subtitle-base z-10 text-center text-base sm:text-lg md:text-xl lg:text-2xl"> {/* Wenn ich text-base und sm:text-lg Eigenschaften hier verwende, wird md:text-xl und lg:text-2xl aus der tailwind.config.js nicht Funktionieren */}
             {title}
-          </h4>
+          </h3>
           {imageUrl && (
-            <a href={companyLink} target="_blank" rel="noopener noreferrer">
+            <a href={companyLink} target="_blank" rel="noopener noreferrer" aria-label={`Der Weblink zur Information von ${company}`}>
               <img
-                className={`z-10 relative ${layoutData.cardImgPadding}`}
+                className={`relative z-10 ${layoutData.cardImgPadding}`}
                 src={imageUrl}
-                alt={title}
+                alt={`Bild von ${company}`}
               />
             </a>
           )}

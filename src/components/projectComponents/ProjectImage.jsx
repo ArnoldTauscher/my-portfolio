@@ -8,8 +8,12 @@ export const ProjectImage = ({ title, imageUrl, projectLink }) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
   >
-    <a href={projectLink} target="_blank" rel="noopener noreferrer">
-      <img src={imageUrl} alt={title} className='hover:scale-105 transition-all duration-300 ease-in-out'/>
+    <a href={projectLink} target="_blank" rel="noopener noreferrer" aria-label={`Der Weblink zum Projekt ${title}`}>
+      <img 
+        src={imageUrl} 
+        alt={title} 
+        className='shadow-image hover:scale-105 transition-all duration-300 ease-in-out'
+      />
     </a>
   </motion.div>
 );
@@ -19,3 +23,4 @@ ProjectImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
 };
+

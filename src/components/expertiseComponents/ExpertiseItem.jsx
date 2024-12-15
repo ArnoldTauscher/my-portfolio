@@ -29,11 +29,11 @@ export const ExpertiseItem = ({ title, imageUrl, link, style }) => {
     >
       {/* Dynamische Größe für Inhalte */}
       <div className="h-[134px] w-[134px] lg:h-[154px] lg:w-[154px] bg-black rounded-3xl">
-        <h4 className="h-[25px] font-montserrat lg:mt-4 md:mt-2 mt-4 lg:mb-4 mb-2 font-semibold lg:text-xl md:text-lg text-base">
+        <h3 className="h-[25px] font-montserrat lg:mt-4 md:mt-2 mt-4 lg:mb-4 mb-2 font-semibold lg:text-xl md:text-lg text-base">
           {title}
-        </h4>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <img src={imageUrl} className="w-[82px] h-[82px] mx-auto" alt={title} />
+        </h3>
+        <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`Der Weblink zur Information von ${title}`}>
+          <img src={imageUrl} className="w-[82px] h-[82px] mx-auto" alt={`${title}-Logo`} />
         </a>
       </div>
     </motion.div>

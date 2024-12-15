@@ -3,9 +3,9 @@ import { DESCRIPTION } from "../../constant/educationData";
 export const EducationDescription = () => {
   return (
     <div className="bg-jet rounded-3xl p-2">
-      <h4 className="lg:text-2xl md:text-xl text-lg text-white font-montserrat text-center font-semibold">
+      <h3 className="text-subtitle-base text-center">
         {DESCRIPTION.AS}
-      </h4>
+      </h3>
       <a
         className="text-blue-400"
         href={DESCRIPTION.EDUCATIONAL_INSTITUTION_LINK}
@@ -16,7 +16,7 @@ export const EducationDescription = () => {
       </a>
       <p>
         {DESCRIPTION.RESULT}{" "}
-        <span className="text-lg text-red-500">
+        <span className="text-lg text-red-400">
           {DESCRIPTION.RESULT_PERCENTAGE}
         </span>
       </p>

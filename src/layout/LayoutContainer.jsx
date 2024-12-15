@@ -6,7 +6,7 @@ const LayoutContainer = () => {
   return (
     <div className="bg-errie-black min-h-screen">
       <Header />
-      <main className="relative z-0">
+      <main className="relative z-0 min-h-[calc(100vh-header-height-footer-height)]">
         <Outlet></Outlet>
       </main>
       <Footer />

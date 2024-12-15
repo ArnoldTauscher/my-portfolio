@@ -4,7 +4,7 @@ import { ProjectItem } from '../projectComponents/ProjectItem';
 import { Images } from "../../assets/images";
 import { Logos } from "../../assets/logos";
 
-export const Projects = () => {
+const Projects = () => {
   return (
     <section id='projects' className="max-w-[1200px] w-[95%] mx-auto py-[65px] text-white px-4">
 
@@ -26,3 +26,5 @@ export const Projects = () => {
     </section>
   );
 };
+
+export default Projects;

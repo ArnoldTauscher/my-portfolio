@@ -1,4 +1,4 @@
-# Awesome Portfolio
+# Mein Awesome Portfolio
 
 
 ### 🥇 Projektübersicht
@@ -18,6 +18,7 @@
     - Framer Motion für Animationen
     - Axios für API-Anfragen
     - Tailwind CSS für das Styling
+    - Barrierefreie Website
 
 ### 🚀 Installation und Start
 

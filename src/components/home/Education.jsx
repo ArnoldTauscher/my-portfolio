@@ -5,7 +5,7 @@ import { SectionTitle } from "../sectionTitle/SectionTitle";
 import { Module } from "../educationComponents/Module";
 import { Images } from "../../assets/images";
 
-export const Education = () => {
+const Education = () => {
   const gradientRef = useGradientUpdater();
 
   return (
@@ -44,3 +44,4 @@ export const Education = () => {
   );
 };
 
+export default Education;

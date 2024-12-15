@@ -5,14 +5,13 @@ import { useState } from "react";
 import { useTextGradientUpdater } from "../hooks/useGradientUpdater";
 import { ContactForm } from "../components/contactComponents/ContactForm";
 
-import { NAV_TEXT } from "../constant/navbarData";
-import { HEADER_TEXT } from "../constant/headerData";
+import { COMMON_TEXT, HEADER_TEXT, NAV_TEXT } from "../constant";
 
 const Header = () => {
   const gradientRef = useTextGradientUpdater();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false); // Zustand für das Kontaktformular
-  const [isSubmitted, setIsSubmitted] = useState(false); // Zustand für das abgeschickte Formular
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -20,7 +19,7 @@ const Header = () => {
 
   const openContactForm = () => {
     setIsContactFormOpen(true);
-    setIsSubmitted(false); // Zurücksetzen des abgeschickten Zustands
+    setIsSubmitted(false);
   };
 
   const closeContactForm = () => {
@@ -33,81 +32,103 @@ const Header = () => {
 
   const renderNavItems = () =>
     NAV_TEXT.NAV_ITEMS.map((item) => (
-      <li
-        key={item.id}
-        className="text-white text-base font-source-sans hover:scale-105 transition-all ease-in-out duration-300 font-normal whitespace-nowrap"
-      >
-        <a href={`#${item.id}`}>{item.text}</a>
+      <li key={item.id} className="text-navbar">
+        <a
+          href={`#${item.id}`}
+          className="p-1 rounded-md transition-all duration-200 focus:ring-2 focus:ring-vibrant-pink focus:outline-none"
+        >
+          {item.text}
+        </a>
       </li>
     ));
 
   return (
-    <header className="text-white flex flex-col relative after:content-[''] after:bg-grad-theme-135 after:absolute xl:after:w-[520px] xl:after:h-[520px] md:after:w-[300px] md:after:h-[300px] after:w-[200px] after:h-[200px] after:top-[90%] after:left-0 after:blur-[70px] after:rounded-full before:content-[''] before:bg-grad-theme-135 before:absolute xl:before:w-[520px] xl:before:h-[520px] md:before:w-[300px] md:before:h-[300px] before:w-[200px] before:h-[200px] before:top-[60%] before:right-0 before:blur-[70px] before:rounded-full">
-      <div className="max-w-[1320px] px-4 flex items-center justify-between py-[30px] mx-auto w-full relative">
-        <div className="flex items-center gap-x-9">
-          <nav
-            className={`lg:relative lg:right-auto lg:top-auto lg:bg-transparent lg:p-0 fixed right-0 top-0 bg-errie-black h-full z-50 p-5 sm:w-[300px] w-full translate-alls ease-in-out duration-300 shadow-navbar lg:shadow-none lg:translate-x-0 ${
-              isNavbarOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex justify-end mb-10 lg:hidden hover:opacity-80 transition-all duration-300 ease-in-out">
-              <button type="button" onClick={toggleNavbar}>
+    <header className="relative flex flex-col text-white after:absolute after:left-0 after:top-[90%] after:h-[200px] after:w-[200px] after:rounded-full after:bg-grad-theme-135 after:blur-[70px] after:content-[''] md:after:h-[300px] md:after:w-[300px] xl:after:h-[520px] xl:after:w-[520px] before:absolute before:right-0 before:top-[60%] before:h-[200px] before:w-[200px] before:rounded-full before:bg-grad-theme-135 before:blur-[70px] before:content-[''] md:before:h-[300px] md:before:w-[300px] xl:before:h-[520px] xl:before:w-[520px]">
+      <div className="relative mx-auto flex w-full max-w-[1320px] items-center justify-between px-4 py-[30px]">
+          {/* Menü-Taste für mobile Ansicht - AUSSERHALB des Nav-Containers */}
+  <button
+    type="button"
+    onClick={toggleNavbar}
+    title="Navigationsmenü öffnen"
+    className={`
+      lg:hidden 
+      absolute top-[23px] right-5 z-[60]
+      transition-all duration-300 ease-in-out 
+      p-1 rounded-md 
+      focus:ring-2 focus:ring-vibrant-pink focus:outline-none
+      ${isNavbarOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}
+    `}
+  >
+    <MdMenu size={32} />
+  </button>
+
+  <div className="flex items-center gap-x-9">
+    <nav
+      className={`
+        fixed right-0 top-0 z-50 h-full w-full sm:w-[300px] 
+        bg-errie-black p-5 
+        transition-transform duration-300 ease-in-out 
+        lg:relative lg:right-auto lg:top-auto lg:w-auto lg:bg-transparent lg:p-0 
+        ${isNavbarOpen ? "translate-x-0 shadow-navbar" : "translate-x-full lg:translate-x-0"}
+      `}
+    >
+            <div className="mb-10 flex justify-end transition-all duration-300 ease-in-out hover:opacity-80 lg:hidden">
+              <button
+                type="button"
+                onClick={toggleNavbar}
+                title="Navigationsmenü schließen"
+                className="p-1 rounded-md focus:ring-2 focus:ring-vibrant-pink focus:outline-none"
+              >
                 <IoMdClose size={32} />
               </button>
             </div>
-            <ul className="flex lg:flex-row lg:items-center xl:gap-x-12 lg:gap-x-10 gap-x-8 flex-col gap-y-5 text-center">
+            <ul className="flex flex-col gap-y-5 text-center lg:flex-row lg:items-center lg:gap-x-10 xl:gap-x-12">
               {renderNavItems()}
             </ul>
             {/* Kontaktformular-Taste in der mobilen Ansicht */}
-            <div className="flex flex-col gap-y-5 items-center lg:hidden mt-6">
+            <div className="mt-6 flex flex-col items-center gap-y-5 lg:hidden">
               <button
-                title="Kontaktformular öffnen"
-                className="capitalize text-base font-semibold text-white transition-all duration-300 ease-in-out px-[30px] min-h-[44px] border-[1px] border-white border-solid rounded-lg inline-flex items-center justify-center text-center hover:bg-grad-theme-135 whitespace-nowrap w-full"
+                title={COMMON_TEXT.CONTACT_FORM_BUTTON_TITLE}
+                className="w-full open-contact-form-btn-base"
                 onClick={openContactForm}
               >
-                {HEADER_TEXT.BUTTON_TEXT} 
+                {COMMON_TEXT.CONTACT_FORM_BUTTON_TEXT}
               </button>
             </div>
           </nav>
         </div>
 
         {/* Kontaktformular-Taste in der Desktop-Version */}
-        <div className="lg:flex items-center xl:gap-x-7 lg:gap-x-6 gap-x-5 hidden">
+        <div className="hidden items-center gap-x-5 lg:flex lg:gap-x-6 xl:gap-x-7">
           <button
-            title="Kontaktformular öffnen"
-            className="capitalize text-base font-semibold text-white transition-all duration-300 ease-in-out px-[30px] min-h-[44px] border-[1px] border-white border-solid rounded-lg inline-flex items-center justify-center text-center hover:bg-grad-theme-135 whitespace-nowrap"
+            title={COMMON_TEXT.CONTACT_FORM_BUTTON_TITLE}
+            className="open-contact-form-btn-base"
             onClick={openContactForm}
           >
-            {HEADER_TEXT.BUTTON_TEXT}
+            {COMMON_TEXT.CONTACT_FORM_BUTTON_TEXT}
           </button>
         </div>
-
-        {/* Menü-Taste für mobile Ansicht */}
-        <button
-          type="button"
-          className="lg:hidden hover:opacity-80 duration-300 ease-in-out translate-all"
-          onClick={toggleNavbar}
-        >
-          <MdMenu size={32} />
-        </button>
       </div>
+      
+      {isContactFormOpen && (
         <ContactForm
           isContactFormOpen={isContactFormOpen}
           isSubmitted={isSubmitted}
           closeContactForm={closeContactForm}
           handleFormSubmit={handleFormSubmit}
         />
-      <div className="flex flex-col items-start justify-center max-w-[1200px] w-[90%] mx-auto font-montserrat flex-1 relative z-10 my-[60px] px-4">
+      )}
+      <div className="relative z-10 mx-auto my-[60px] flex w-[90%] max-w-[1200px] flex-1 flex-col items-start justify-center px-4 font-montserrat">
         <h1
-          className="gradi-theme-text font-bold xl:text-[64px] lg:text-5xl text-4xl leading-[1.25] mb-[40px]"
+          className="mb-[40px] text-4xl font-bold leading-[1.25] gradi-theme-text lg:text-5xl xl:text-[64px]"
           ref={gradientRef}
         >
-          {HEADER_TEXT.NAME}
+          {COMMON_TEXT.NAME}
         </h1>
-        <p className="lg:text-xl md:text-lg text-base mb-[20px]">
+        <p className="mb-[20px] text-base md:text-lg lg:text-xl">
           {HEADER_TEXT.DESCRIPTION_1}
         </p>
-        <p className="lg:text-xl md:text-lg text-base mb-[20px]">
+        <p className="mb-[20px] text-base md:text-lg lg:text-xl">
           {HEADER_TEXT.DESCRIPTION_2}.
         </p>
       </div>

@@ -21,25 +21,28 @@ export const BUTTON_TEXT = {
 };
 
 export const BUTTON_BASE_CLASSES = `
-min-h-[50px]
-font-sans
-font-semibold 
-text-[20px] 
-leading-[28px]  
-border-2
-rounded-lg
-cursor-pointer
-px-5
-transition-all 
-duration-300
+  min-h-[50px]
+
+  font-semibold 
+
+  border-2
+  rounded-lg
+
+  px-5
+  transition-all 
+  duration-300
 hover:scale-105
 focus:outline-none
-text-nowrap
+whitespace-nowrap
 md:text-base
-ease-in-out
+  ease-in-out
 w-[200px]
 `;
-
+/*
+'.contact-form-btn-base': {
+  '@apply w-[200px] min-h-[50px] items-center justify-center rounded-lg border-2 px-5 text-center text-base font-semibold capitalize transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none whitespace-nowrap': {},
+},
+*/
 export const SUBMITTED = "Vielen Dank für Ihre Nachricht.";
 
 export const ERROR_MESSAGE = {

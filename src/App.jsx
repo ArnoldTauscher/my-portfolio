@@ -1,13 +1,17 @@
 import { Analytics } from '@vercel/analytics/react';
-import AppRoutes from "./routes/AppRoutes";
 import { BrowserRouter as Router } from "react-router-dom";
+
+import AppRoutes from "./routes/AppRoutes";
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 function App() {
   return (
-    <Router>
-      <Analytics />
-      <AppRoutes />
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <Analytics />
+        <AppRoutes />
+      </Router>
+    </ErrorBoundary>
   );
 }
 

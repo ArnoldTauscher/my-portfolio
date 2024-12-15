@@ -10,35 +10,35 @@ export const Module = ({ title, imageUrl, content }) => {
 
   return (
     <motion.div
-      className={`bg-grad-theme-135 rounded-3xl overflow-hidden p-[3px] md:min-h-[444px] min-h-auto ${layoutData.cardColSpan}`}
+      className={`overflow-hidden min-h-auto md:min-h-card p-[3px] card-base ${layoutData.cardColSpan}`}
       ref={gradientRef}
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
     >
       <div
-        className={`rounded-3xl overflow-hidden bg-jet flex relative ${layoutData.cardFlexCol} ${layoutData.cardGradientAfter} ${layoutData.cardGradientBefore} justify-between items-center h-full lg:gap-y-[26px] md:gap-y-5 gap-y-4`}
+        className={`relative flex h-full items-center justify-between overflow-hidden bg-jet rounded-3xl ${layoutData.cardFlexCol} ${layoutData.cardGradientAfter} ${layoutData.cardGradientBefore} gap-y-4 md:gap-y-5 lg:gap-y-[26px]`}
       >
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-15"
+            className="h-full w-full object-cover opacity-15"
             src={imageUrl}
-            alt={title}
+            alt={`${title}-Hintergrund`}
           />
         </div>
-        <div className="relative z-10 flex flex-col items-center w-full h-full p-5">
-          <h4 className="lg:text-2xl md:text-xl text-lg text-white font-montserrat text-center font-semibold mb-4">
+        <div className="relative z-10 flex h-full w-full flex-col items-center p-5">
+          <h4 className="text-subtitle-base mb-4 text-center">
             {title}
           </h4>
           <div className="content-container flex-grow overflow-auto">
             {Array.isArray(content) ? (
               content.map((item, index) => (
-                <div key={index} className="flex mb-2">
+                <div key={index} className="mb-2 flex">
                   <span className="w-6 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </div>
               ))
             ) : (
-              <div className="flex mb-2">
+              <div className="mb-2 flex">
                 <span className="w-6 flex-shrink-0">-</span>
                 <span>{content}</span>
               </div>
