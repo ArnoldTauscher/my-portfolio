@@ -30,7 +30,7 @@ export const PROJECTS_DATA = [
         id: 3,
         title: "Purrrsche Purrradise",
         description: "Diese React-Anwendung demonstriert fortgeschrittene Webtechnologien und Best Practices in der Frontend-Entwicklung, während sie gleichzeitig einen kreativen und unterhaltsamen Ansatz zur Präsentation eines fiktiven Automobilunternehmens verfolgt.",
-        tech: ["react_logo", "expressjs_logo"],
+        tech: ["react_logo", "expressjs_logo", "mongodb_logo"],
         githubLink: "https://github.com/ArnoldTauscher/Purrrsche-Purrradise",
         githubReadmeLink: "https://github.com/ArnoldTauscher/Purrrsche-Purrradise/blob/main/README.md",
         imageUrl: "purrrsche_purrradise",
@@ -40,10 +40,40 @@ export const PROJECTS_DATA = [
         id: 4,
         title: "Mein Portfolio",
         description: "Mein persönliches Portfolio-Projekt, das meine Fähigkeiten und Projekte auf eine ansprechende und interaktive Weise präsentiert.",
-        tech: ["react_logo", "tailwind_css_logo"],
+        tech: ["react_logo", "tailwind_css_logo", "mongodb_logo"],
         githubLink: "https://github.com/ArnoldTauscher/my-portfolio",
         githubReadmeLink: "https://github.com/ArnoldTauscher/my-portfolio/blob/main/README.md",
         imageUrl: "my_portfolio",
+        projectLink: "https://meinawesomeportfolio.vercel.app"
+    },
+    {
+        id: 5,
+        title: "AI To-Do List",
+        description: "KI-gestützte To-Do-Liste mit SquidCloud.",
+        tech: ["react_logo", "typescript_logo"],
+        githubLink: "https://github.com/ArnoldTauscher/AI-To-Do-List",
+        githubReadmeLink: "https://github.com/ArnoldTauscher/AI-To-Do-List/blob/main/frontend/README.md",
+        imageUrl: "ai_todo_list",
+        projectLink: "https://squid-ai-to-do-list.vercel.app/"
+    },
+    {
+        id: 6,
+        title: "To-Do List Backend",
+        description: "Diese Todo-App ist eine einfache, aber leistungsfähige Anwendung zur Verwaltung von Aufgaben. Sie wurde mit Node.js, Express, und PostgreSQL entwickelt und nutzt Prisma als ORM.",
+        tech: ["expressjs_logo", "postgres_sql_logo", "docker_logo"],
+        githubLink: "https://github.com/ArnoldTauscher/AI-To-Do-List",
+        githubReadmeLink: "https://github.com/ArnoldTauscher/AI-To-Do-List/blob/main/frontend/README.md",
+        imageUrl: "todo_list_backend",
+        projectLink: ""
+    },
+        {
+        id: 7,
+        title: ["Employee Task Management", "System"],
+        description: "Ein webbasiertes System zur Verwaltung von Aufgaben und Mitarbeitern.",
+        tech: ["php_logo", "mysql_logo"],
+        githubLink: "https://github.com/ArnoldTauscher/employee-task-management-system",
+        githubReadmeLink: "https://github.com/ArnoldTauscher/employee-task-management-system/blob/main/README.md",
+        imageUrl: "task_management_system",
         projectLink: ""
     },
 ];

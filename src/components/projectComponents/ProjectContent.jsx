@@ -18,11 +18,27 @@ export const ProjectContent = ({
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      <div className="flex">
-        <h3 className="text-subtitle-base mb-2 mr-3">
-          {title}
-        </h3>
-        {renderTechImages(tech)}
+      <div className="flex">        
+        {Array.isArray(title) ? (
+          <>
+          <div className="flex flex-col">
+            {title.map((item, index) => (
+              <h3 key={index} className="text-subtitle-base mb-2">
+                {item}
+              </h3>
+            ))}
+            </div>
+            {renderTechImages(tech)}
+          </>
+        ) : (
+          <div className="flex">
+            <h3 className="text-subtitle-base mb-2 mr-3">
+              {title}
+            </h3>
+            {renderTechImages(tech)}
+          </div>
+        )}
+        
       </div>
       <p className="mb-4 font-source-sans text-sm lg:text-base">
         {description}
@@ -50,7 +66,10 @@ export const ProjectContent = ({
 };
 
 ProjectContent.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   description: PropTypes.string.isRequired,
   tech: PropTypes.oneOfType([
     PropTypes.string,

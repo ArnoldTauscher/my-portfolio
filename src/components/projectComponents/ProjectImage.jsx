@@ -19,7 +19,10 @@ export const ProjectImage = ({ title, imageUrl, projectLink }) => (
 );
 
 ProjectImage.propTypes = {
-  title: PropTypes.string.isRequired,
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
   imageUrl: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
 };
