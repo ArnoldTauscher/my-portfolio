@@ -68,14 +68,14 @@ const Expertise = () => {
       remainingDurationRef.current = roundToWholeNumber(
         Math.max(totalDuration - elapsedDuration, 0)
       );
-  
+/*    // Debugging-Ausgabe
       console.log('Animation starting:', {
         currentX,
         progress,
         elapsedDuration,
         remainingDuration: remainingDurationRef.current,
       });
-  
+*/  
       if (remainingDurationRef.current > 0) {
         controls.start({
           x: [currentX, -totalWidth],
@@ -92,7 +92,9 @@ const Expertise = () => {
       }
       startTimeRef.current = Date.now();
     } else {
+/*    // Debugging-Ausgabe
       console.log('Animation paused. Current x:', x.get());
+*/
       controls.stop();
     }
   
@@ -103,12 +105,16 @@ const Expertise = () => {
 
   // Event-Handler für Maus-Interaktionen
   const handleMouseEnter = () => {
+/*  // Debugging-Ausgabe
     console.log('Mouse entered. Pausing animation.');
+*/
     setIsHovered(true);
   };
   
   const handleMouseLeave = () => {
+/*  // Debugging-Ausgabe
     console.log('Mouse left. Resuming animation.');
+*/
     setIsHovered(false);
   };
 

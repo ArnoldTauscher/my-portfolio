@@ -100,48 +100,66 @@ export const EXPERTISE_DATA = [
     },
     {
         id: 10,
+        title: "Vue.js",
+        imageUrl: "vue_js_logo",
+        link: "https://vuejs.org/"
+    },
+    {
+        id: 11,
         title: "Express.js",
         imageUrl: "expressjs_logo",
         link: "https://expressjs.com/"
     },
     {
-        id: 11,
+        id: 12,
         title: "Next.js",
         imageUrl: "nextjs_logo",
         link: "https://nextjs.org/"
     },
     {
-        id: 12,
+        id: 13,
         title: "Python3",
         imageUrl: "python_logo",
         link: "https://www.python.org/doc/"
     },
     {
-        id: 13,
+        id: 14,
         title: "Java",
         imageUrl: "java_logo",
         link: "https://dev.java/"
     },
     {
-        id: 14,
+        id: 15,
+        title: "PHP",
+        imageUrl: "php_logo",
+        link: "https://www.php.net/"
+    },
+    {
+        id: 16,
         title: "MySQL",
         imageUrl: "mysql_logo",
         link: "https://www.mysql.com/de/about/"
     },
     {
-        id: 15,
+        id: 17,
+        title: "PostgresSQL",
+        imageUrl: "postgres_sql_logo",
+        link: "https://www.postgresql.org/"
+    },
+    {
+        id: 18,
         title: "mongoDB",
         imageUrl: "mongodb_logo",
         link: "https://www.mongodb.com/de-de"
     },
     {
-        id: 16,
+        id: 19,
         title: "GitHub",
         imageUrl: "github_logo",
         link: "https://github.com/"
     },
     {
-        id: 17,
+        id: 20,
         title: "Docker",
         imageUrl: "docker_logo",
         link: "https://www.docker.com/"
