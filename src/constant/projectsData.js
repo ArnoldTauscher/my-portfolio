@@ -61,8 +61,8 @@ export const PROJECTS_DATA = [
         title: "To-Do List Backend",
         description: "Diese Todo-App ist eine einfache, aber leistungsfähige Anwendung zur Verwaltung von Aufgaben. Sie wurde mit Node.js, Express, und PostgreSQL entwickelt und nutzt Prisma als ORM.",
         tech: ["expressjs_logo", "postgres_sql_logo", "docker_logo"],
-        githubLink: "https://github.com/ArnoldTauscher/AI-To-Do-List",
-        githubReadmeLink: "https://github.com/ArnoldTauscher/AI-To-Do-List/blob/main/frontend/README.md",
+        githubLink: "https://github.com/ArnoldTauscher/to-do-list-backend",
+        githubReadmeLink: "https://github.com/ArnoldTauscher/to-do-list-backend/blob/main/README.md",
         imageUrl: "todo_list_backend",
         projectLink: ""
     },
@@ -74,6 +74,16 @@ export const PROJECTS_DATA = [
         githubLink: "https://github.com/ArnoldTauscher/employee-task-management-system",
         githubReadmeLink: "https://github.com/ArnoldTauscher/employee-task-management-system/blob/main/README.md",
         imageUrl: "task_management_system",
+        projectLink: ""
+    },
+            {
+        id: 8,
+        title: ["\"Someone's Store\" Online-", "Shop"],
+        description: "Ein Fullstack-Online-Shop auf Basis des MERN-Stacks (MongoDB, Express.js, React und Node.js).",
+        tech: ["mongodb_logo", "expressjs_logo", "react_logo", "nodejs_logo"],
+        githubLink: "https://github.com/ArnoldTauscher/online-shop",
+        githubReadmeLink: "https://github.com/ArnoldTauscher/online-shop/blob/main/README.md",
+        imageUrl: "under_construction",
         projectLink: ""
     },
 ];
